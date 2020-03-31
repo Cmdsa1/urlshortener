@@ -7,7 +7,8 @@ This is a simple CRUD SpringBoot application used to shorten a user's URL and st
 - Java 
 - SpringBoot
 - Vue Js
-- MongoDB (atlas)
+- MongoDB (atlas & embedded)
+- Maven
 
 SpringBoot because it's the best framework to create REST webservices in java which my most familiar language.
 Vue Js because I have been make experiments with it :), it's faster than Angular and React, and it's easier to customize.
