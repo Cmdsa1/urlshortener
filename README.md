@@ -47,10 +47,15 @@ I might want to change schemas faster and NoSQL databases offer more flexibility
 ## User Requirements Specification
 
 - a user does not fill the input and clicks the button then an error message will appear;
+
 - a user fills the input with an invalid URL and clicks button then an error message will appear;
+
 -a user fills the input correctly and clicks the button and the URL is not registered in the database then the short URL will appear;
+
 -a user fills the input correctly and clicks the button and the URL is already registered in the database then the short URL and a short message will appear;
+
 -a user clicks the short URL link and the URL is registered in the database then the user will be redirected to long URL corresponding to the short version;
+
 -a user clicks the short URL link and the URL is not registered in the database then the user will be redirected a not found page;
 
 
@@ -65,7 +70,9 @@ This endpoint receives a request from the frontend (with basic authentication) w
 Request:
 
 {
-  longUrl: "https://github.com/Cmdsa1"
+
+    longUrl: "https://github.com/Cmdsa1"
+    
 }
 
 Response:
@@ -73,14 +80,18 @@ Response:
 Success (200)
 
 {
-  shortUrl: https://localhost:8080/b
-  info:""
+    
+    shortUrl: https://localhost:8080/b
+    
+    info:""
 }
 
 Failure (400)
 
 {
-  errorMessage: "The URL value cannot be empty, please enter a valid URL"
+
+    errorMessage: "The URL value cannot be empty, please enter a valid URL"
+    
 }
 
 
