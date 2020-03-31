@@ -69,30 +69,29 @@ This endpoint receives a request from the frontend (with basic authentication) w
 
 Request:
 
-{
+    {
 
-    longUrl: "https://github.com/Cmdsa1"
+        longUrl: "https://github.com/Cmdsa1"
     
-}
+    }
 
 Response:
 
 Success (200)
 
-{
+    {
+        shortUrl: https://localhost:8080/b
     
-    shortUrl: https://localhost:8080/b
-    
-    info:""
-}
+        info:""
+    }
 
 Failure (400)
 
-{
+    {
 
-    errorMessage: "The URL value cannot be empty, please enter a valid URL"
+        errorMessage: "The URL value cannot be empty, please enter a valid URL"
     
-}
+    }
 
 
 ### GET /{shortUrl}
