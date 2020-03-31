@@ -1,7 +1,11 @@
 # # Url Shortener BackEnd
 
+Runs on localhost port 8080.
+
 ## Prerequisites:
-This project uses maven so make sure the mvn command is available.
+
+- Maven
+- Docker
 
 ## Run tests:
 ```
@@ -11,3 +15,9 @@ mvn test
 ```
 mvn spring-boot:run
 ```
+## Create and run docker container:
+```
+mvn install (to generate the jar)
+docker-compose run web_api
+```
+
