@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  web_api:
+    image: urlshortener-backend-1.0.0.jar:1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
