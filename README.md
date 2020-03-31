@@ -19,28 +19,27 @@ Vue Js because I have been make experiments with it :), it's faster than Angular
 Possibilities:
 
 - Md5 Hash
-It uses the first 7 char to create the 
+It is a fast enconding method, however if we talk about product scalability we will probably end up with data corruption due to the possible data collision.
 
 - Base62
 
+Since it's an URl it doesn't make much sence to use Base64 (+ and /, are not symbols we migth want to add to the our Url), so the best way to shorten the Url is to get the next available index to store a document and convert it to Base 62 using a simple enconding algorithm.
 
 ##Storage
 
 Options:
 
 - In-Memory database
-Does not require the creation of database outside of the app, however in-memory databases are not an atual representation of databases and so the most probable scenario is ending up with incompatibilities.
+It's more than enough for really small and simple apps, however since the objective here it's to simulate a real Url shortener I will not use this option for production. I will however use an embedded database for testing.
 
 - DataBase
-Most appropriate if this was an app going for production, however even though for this exercise it's over engineering recruiters might want to see how I deal with database management.
+Even though for this exercise it's over engineering I still want to use it because if this app was going for production it would be the best option.
 
 There are 2 possible types, SQL and NoSQL databases.
 
-Because it's a small application, and I might want to change schemas faster NoSQL databases offer more flexibility and higher scalability.
+I might want to change schemas faster and NoSQL databases offer more flexibility and higher scalability.
 
 ##User Requirements Specification
-
-- the user
 
 
 ##API endpoints
