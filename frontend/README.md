@@ -19,3 +19,7 @@ npm run build
 ```
 npm run lint
 ```
+### Run docker compose file
+```
+docker-compose run web
+```
