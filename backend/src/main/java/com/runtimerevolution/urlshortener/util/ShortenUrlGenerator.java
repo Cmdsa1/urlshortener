@@ -20,7 +20,6 @@ public class ShortenUrlGenerator {
                 shorturl.append(BASE62[n % BASE_LENGTH]);
                 n = n / 62;
             }
-            //reverse because string builder adds chars sequentially, and we want the number from the first char to the last one
             return shorturl.toString();
         }else {
             return null;
