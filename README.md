@@ -39,7 +39,7 @@ Even though for this exercise it's over engineering I still want to use it becau
 
 There are 2 possible types, SQL and NoSQL databases.
 
-I might want to change schemas faster and NoSQL databases offer more flexibility and higher scalability.
+I might want to change schemas faster and NoSQL databases offer more flexibility and have higher scalability.
 
 #### Security
 
