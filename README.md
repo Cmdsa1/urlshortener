@@ -46,17 +46,17 @@ I might want to change schemas faster and NoSQL databases offer more flexibility
 
 ## User Requirements Specification
 
-- a user does not fill the input and clicks the button then an error message will appear;
+- a user does not fill the input and clicks the button, then an error message will appear;
 
-- a user fills the input with an invalid URL and clicks button then an error message will appear;
+- a user fills the input with an invalid URL and clicks button, then an error message will appear;
 
-- a user fills the input correctly and clicks the button and the URL is not registered in the database then the short URL will appear;
+- a user fills the input correctly and clicks the button and the URL is not registered in the database, then the short URL will appear;
 
-- a user fills the input correctly and clicks the button and the URL is already registered in the database then the short URL and a short message will appear;
+- a user fills the input correctly and clicks the button and the URL is already registered in the database, then the short URL and a short message will appear;
 
-- a user clicks the short URL link and the URL is registered in the database then the user will be redirected to long URL corresponding to the short version;
+- a user clicks the short URL link and the URL is registered in the database, then the user will be redirected to long URL corresponding to the short version;
 
-- a user clicks the short URL link and the URL is not registered in the database then the user will be redirected a not found page;
+- a user clicks the short URL link and the URL is not registered in the database, then the user will be redirected a not found page;
 
 
 ## API endpoints
@@ -96,7 +96,7 @@ Failure (400)
 
 ### GET /{shortUrl}
 
-Receives get request,in case of sucess finds the Long URL correponding to the short version and redirects the user to the long URL web page. In case o failure presents a "Link no found" web page.
+Receives get request, in case of sucess finds the long URL correponding to the short version and redirects the user to the long URL web page. In case o failure presents a "Link no found" web page.
 
 
 
