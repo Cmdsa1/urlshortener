@@ -19,32 +19,34 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class UrlApiRestController {
 
-    private final Logger logger = LoggerFactory.getLogger(UrlApiRestController.class);
+  private final Logger logger = LoggerFactory.getLogger(UrlApiRestController.class);
 
-    @Autowired
-    UrlService urlService;
+  @Autowired
+  UrlService urlService;
 
-    /**
-     * Shorten url creater endpoint,
-     * receives request with the long url version
-     * returns a HTTPentity with result of the operation and in case of success the corresponding shorten url
-     **/
-    @RequestMapping(value = "/url/shorten", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity shortenUrl(@Validated @RequestBody OriginalUrlRequest requestModel) {
+  /**
+   * Shorten url creater endpoint,
+   * receives request with the long url version
+   * returns a HTTPentity with result of the operation and in case of success the corresponding shorten url
+   **/
+  @RequestMapping(value = "/url/shorten", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity shortenUrl(@Validated @RequestBody OriginalUrlRequest requestModel) {
 
-        ShortenUrlResponse response;
-        try {
-            response = urlService.createShortenUrl(requestModel);
-            if (response != null) {
-                logger.debug("Process:" + " 'shortenUrl': " + "LongUrl= " + requestModel.getLongUrl() + ": ShortenUrl= " + response.getShortUrl());
-                return ResponseEntity.status(HttpStatus.OK).body(response);
-            } else {
-                logger.debug("Process:" + " 'shortenUrl': " + "LongUrl= " + requestModel.getLongUrl() + ": ShortenUrl= " + response.getShortUrl() + ": process failed");
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-            }
-        } catch (Exception e) {
-            logger.error("Process:" + " 'shortenUrl': " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-        }
+    ShortenUrlResponse response;
+    try {
+      response = urlService.createShortenUrl(requestModel);
+      if (response != null) {
+        logger.debug("Process:" + " 'shortenUrl': " + "LongUrl= " + requestModel.getLongUrl()
+            + ": ShortenUrl= " + response.getShortUrl());
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+      } else {
+        logger.debug("Process:" + " 'shortenUrl': " + "LongUrl= " + requestModel.getLongUrl()
+            + ": ShortenUrl= " + response.getShortUrl() + ": process failed");
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+      }
+    } catch (Exception e) {
+      logger.error("Process:" + " 'shortenUrl': " + e.getMessage());
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
+  }
 }

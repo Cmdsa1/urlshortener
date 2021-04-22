@@ -14,31 +14,31 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .withUser("frontend").password(passwordEncoder().encode("ol12!*Ac")).roles("USER")
-                .and()
-                .withUser("test").password(passwordEncoder().encode("test")).roles("USER");
-    }
+  @Override
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    auth
+        .inMemoryAuthentication()
+        .withUser("frontend").password(passwordEncoder().encode("ol12!*Ac")).roles("USER")
+        .and()
+        .withUser("test").password(passwordEncoder().encode("test")).roles("USER");
+  }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
 
-        http
-                .antMatcher("/api/url/shorten")
-                .authorizeRequests()
-                .anyRequest().hasRole("USER")
-                .and()
-                .httpBasic()
-                .and()
-                .csrf().disable();
+    http
+        .antMatcher("/api/url/shorten")
+        .authorizeRequests()
+        .anyRequest().hasRole("USER")
+        .and()
+        .httpBasic()
+        .and()
+        .csrf().disable();
 
-    }
+  }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 }
