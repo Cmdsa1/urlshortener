@@ -1,3 +1,5 @@
+[![Maven Package](https://github.com/cmsaraiva/url-shortener/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/cmsaraiva/url-shortener/actions/workflows/maven-publish.yml)
+
 # Documentation
 
 This is a simple CRUD SpringBoot application used to shorten a user's URL and store it. When the user accesses the URL, he will be redirected to the original one.
