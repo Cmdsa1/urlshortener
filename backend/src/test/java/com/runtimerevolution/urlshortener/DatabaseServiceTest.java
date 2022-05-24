@@ -11,7 +11,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class DatabaseServiceTest {
 
     private final static String DATASEQUENCE = "shortenurl";
